@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: assistant-service
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    openai:
+      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: ${DEEPSEEK_MODEL:deepseek-chat}
+          temperature: 0.1
+    mcp:
+      client:
+        name: banking-assistant
+        request-timeout: 30s
+        sse:
+          connections:
+            accounts:
+              url: ${ACCOUNT_MCP_URL:http://localhost:8081}
+            transactions:
+              url: ${TRANSACTION_MCP_URL:http://localhost:8082}
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}

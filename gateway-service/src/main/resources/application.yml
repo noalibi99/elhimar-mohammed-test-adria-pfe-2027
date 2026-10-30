@@ -12,5 +12,9 @@ spring:
           uri: lb://transaction-service
           predicates:
             - Path=/api/transactions/**
+        - id: assistant
+          uri: lb://assistant-service
+          predicates:
+            - Path=/api/chat,/api/chat/**
 server:
   port: 8080

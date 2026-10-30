@@ -2,6 +2,9 @@
 **/target/
 **/src/test/
 postman/
+.env
+.env.*
+!.env.example
 *.iml
 .DS_Store
 Test ADRIA ENSET 2027.pdf
