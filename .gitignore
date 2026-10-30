@@ -1,6 +1,7 @@
 .idea/
 **/target/
 **/src/test/
+postman/
 *.iml
 .DS_Store
 Test ADRIA ENSET 2027.pdf
