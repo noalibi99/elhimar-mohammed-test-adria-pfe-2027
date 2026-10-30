@@ -1,4 +1,4 @@
-package me.medelhimar.bdcc.account.web;
+package me.medelhimar.bdcc.account.web.rest;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
