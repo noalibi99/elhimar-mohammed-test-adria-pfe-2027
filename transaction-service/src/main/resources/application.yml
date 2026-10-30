@@ -10,5 +10,10 @@ spring:
     mcp:
       server:
         name: transaction-service
+bank:
+  transaction:
+    max-amount: 1000
+  account-service:
+    url: http://localhost:8081
 server:
   port: 8082

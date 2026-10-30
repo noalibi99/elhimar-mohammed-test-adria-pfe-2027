@@ -1,3 +1,19 @@
 type Query {
-    _placeholder: String
+    transaction(id: ID!): BankTransaction!
+    transactions(accountId: ID): [BankTransaction!]!
+}
+
+type Mutation {
+    createTransaction(accountId: ID!, amount: Float!, currency: String!, merchantCategory: String, country: String): BankTransaction!
+    transfer(sourceId: ID!, destinationId: ID!, amount: Float!, currency: String!): [BankTransaction!]!
+}
+
+type BankTransaction {
+    id: ID!
+    accountId: ID!
+    amount: Float!
+    currency: String!
+    merchantCategory: String
+    country: String
+    createdAt: String!
 }
